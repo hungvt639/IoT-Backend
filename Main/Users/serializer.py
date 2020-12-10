@@ -1,6 +1,5 @@
 from .models import MyUsers
 from rest_framework import serializers
-from App.models.Snippets import Snippet
 
 
 class UserSerializer(serializers.ModelSerializer):

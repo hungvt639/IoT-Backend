@@ -29,12 +29,22 @@ def on_message(client, userdata, msg):
         pass
 
 
-client = mqtt.Client()
-client.on_connect = on_connect
-client.on_publish = on_publish
-client.on_subscribe = on_subscribe
-client.on_message = on_message
-client.connect(HOST, PORT)
-client.subscribe("test", qos=1)
-client.loop_start()
+# client = mqtt.Client()
+# client.on_connect = on_connect
+# client.on_publish = on_publish
+# client.on_subscribe = on_subscribe
+# client.on_message = on_message
+# client.connect(HOST, PORT)
+# client.subscribe("test", qos=1)
+# client.loop_start()
 
+
+def conect(topic):
+    client = mqtt.Client()
+    client.on_connect = on_connect
+    client.on_publish = on_publish
+    client.on_subscribe = on_subscribe
+    client.on_message = on_message
+    client.connect(HOST, PORT)
+    client.subscribe(topic, qos=1)
+    client.loop_start()

@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django_rest_passwordreset',
     'corsheaders',
     'oauth2_provider',
-    'Mqtt'
+    # 'Mqtt'
 ]
 
 REST_FRAMEWORK = {
