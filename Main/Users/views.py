@@ -48,10 +48,8 @@ class Avatar(generics.ListCreateAPIView):
                 return Response(avatar, status=status.HTTP_200_OK)
             else:
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        except Exception as e:
-            raise e
-            respose = {"message": "Đã có lỗi sảy ra, bạn vui lòng thử lại"}
-            return Response(respose, status=status.HTTP_400_BAD_REQUEST)
+        except:
+            return Response({"message": ["Đã có lỗi sảy ra, bạn vui lòng thử lại"]}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class CreateUser(generics.ListCreateAPIView):
@@ -65,12 +63,11 @@ class CreateUser(generics.ListCreateAPIView):
                 serializer.save()
                 user = serializer.data.copy()
                 user.pop('password')
-                user_permission(user['id'])
+                user_permission(user['id'], 'user')
                 return Response({"user": user}, status=status.HTTP_200_OK)
             else:
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        except Exception as e:
-            raise e
+        except:
             respone = {"message": "Error"}
             return Response(respone, status=status.HTTP_400_BAD_REQUEST)
 
