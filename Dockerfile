@@ -1,7 +1,19 @@
+FROM python:3.8
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PORT 8000
+
 FROM python:3.6.9
+RUN mkdir /app
 WORKDIR /app
-ADD requirements.txt /app/requirements.txt
-RUN pip install --upgrade pip && pip install -r requirements.txt
-EXPOSE 8000
+
+COPY requirments.txt /app/requirments.txt
+RUN pip install --upgrade pip && pip install -r requirments.txt
 COPY . /app
-CMD testdocker/manage.py makemigrations && testdocker/manage.py migrate && testdocker/manage.py runserver 0.0.0.0:8000
+
+EXPOSE 8000
+
+
+RUN chmod +x start.sh
+
+CMD ["./start.sh"]

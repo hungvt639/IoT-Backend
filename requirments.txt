@@ -9,3 +9,4 @@ djangorestframework-oauth
 django-oauth-toolkit
 django_rest_passwordreset
 paho-mqtt
+psycopg2

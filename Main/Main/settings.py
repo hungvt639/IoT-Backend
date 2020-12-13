@@ -12,23 +12,14 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'zk0$gntbg9vn-u*92k=wanlad0961u*j@@y99n(vhxq^&qi8ms'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-
-
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -44,7 +35,6 @@ INSTALLED_APPS = [
     'django_rest_passwordreset',
     'corsheaders',
     'oauth2_provider',
-    # 'Mqtt'
 ]
 
 REST_FRAMEWORK = {
@@ -52,10 +42,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        # 'rest_framework.authentication.TokenAuthentication',
-        # # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-        # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-        # 'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
@@ -74,8 +60,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    # 'django.middleware.common.CommonMiddleware',
-    # 'corsheaders.middleware.CorsPostCsrfMiddleware'
 ]
 
 ROOT_URLCONF = 'Main.urls'
@@ -99,19 +83,25 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Main.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'iot-backend',
+        'USER': 'hung',
+        'PASSWORD': 'Hung12345',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
-
-# Password validation
-# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -133,8 +123,7 @@ MIDDLEWARE_CLASSES = (
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
 )
-# Internationalization
-# https://docs.djangoproject.com/en/3.1/topics/i18n/
+
 
 LANGUAGE_CODE = 'en-us'
 
@@ -151,21 +140,10 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'Users.MyUsers'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'zamasu3690@gmail.com'
-EMAIL_HOST_PASSWORD = 'Kakarot123'
-EMAIT_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 CORS_ALLOW_ALL_ORIGINS = True
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",
-#     "http://127.0.0.1:3000"
-# ]
+
 
 CORS_ALLOW_HEADERS = [
     'accept',
@@ -178,6 +156,8 @@ CORS_ALLOW_HEADERS = [
     'x-csrftoken',
     'x-requested-with',
 ]
+
+
 CORS_ALLOW_METHODS = [
     'DELETE',
     'GET',
@@ -186,3 +166,6 @@ CORS_ALLOW_METHODS = [
     'POST',
     'PUT',
 ]
+
+
+ALLOWED_HOSTS = ['*']
