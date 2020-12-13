@@ -20,19 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2a6d7e3-1987-421c-8b13-01bd27e633ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/Main/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/Main/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Mqtt/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Mqtt/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Mqtt/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Mqtt/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Mqtt/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Mqtt/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Mqtt/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirments.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirments.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +49,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ProjectIII/back-end" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -127,10 +117,10 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="721" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1607712489100" />
-    <state x="771" y="294" key="FileChooserDialogImpl" timestamp="1607844380973">
+    <state x="771" y="294" key="FileChooserDialogImpl" timestamp="1607848259794">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="771" y="294" key="FileChooserDialogImpl/62.0.1858.1080@62.0.1858.1080" timestamp="1607844380973" />
+    <state x="771" y="294" key="FileChooserDialogImpl/62.0.1858.1080@62.0.1858.1080" timestamp="1607848259794" />
     <state width="908" height="297" key="GridCell.Tab.0.bottom" timestamp="1607802268487">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
