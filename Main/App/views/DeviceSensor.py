@@ -60,7 +60,6 @@ class DeviceSensorDetailView(generics.ListCreateAPIView):
                 if value.is_sensor:
                     sensor_data = SensorData.objects.filter(sensor=value)
                     serializer_data = SensorSerializer(sensor_data, many=True)
-                    print(1)
                 else:
                     device_data = DeviceData.objects.filter(device=value).last()
                     serializer_data = DeviceSerializer(device_data)
@@ -68,8 +67,6 @@ class DeviceSensorDetailView(generics.ListCreateAPIView):
                 data = serializer.data
                 data['data'] = serializer_data.data
                 return Response(data, status=status_code)
-            except Exception as e:
-                raise e
             except DeviceSensor.DoesNotExist:
                 return Response({"message": ["Không có thiết bị này trong danh sách của bạn!"]},status=status.HTTP_404_NOT_FOUND)
             except:

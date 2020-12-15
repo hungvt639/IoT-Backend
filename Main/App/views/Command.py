@@ -56,8 +56,6 @@ class CommandView(generics.ListCreateAPIView):
                     }
                     return Response(res, status=status.HTTP_200_OK)
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-            except Exception as e:
-                raise e
             except:
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         else:

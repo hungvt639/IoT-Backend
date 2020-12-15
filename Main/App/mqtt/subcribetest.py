@@ -30,26 +30,10 @@ def on_disconnect(client, userdata, rc):
 def on_message(client, userdata, msg):
     datas = ast.literal_eval(msg.payload.decode("UTF-8"))
     print(datas)
-    try:
-        for data in datas:
-            if "sensor" in data.keys():
-                serializer = SensorSerializer(data=data)
-                if serializer.is_valid():
-                    serializer.save()
-                    print("Create: ", serializer.data)
-                else: print(serializer.errors)
-            elif "device" in data.keys():
-                serializer = DeviceSerializer(data=data)
-                if serializer.is_valid():
-                    serializer.save()
-                    print("Create: ", serializer.data)
-                else: print(serializer.errors)
-    except:
-        pass
 
 
 
-class MqttConnect():
+class MqttConnectTest():
     def connect(self, topic):
         client = mqtt.Client(topic)
         client.on_connect = on_connect

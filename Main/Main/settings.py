@@ -97,7 +97,7 @@ DATABASES = {
         'NAME': 'iot-backend',
         'USER': 'hung',
         'PASSWORD': 'Hung12345',
-        'HOST': '127.0.0.1',
+        'HOST': '13.76.188.120',
         'PORT': '5432',
     }
 }

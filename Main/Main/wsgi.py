@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.1/howto/deployment/wsgi/
 
 import os
 from App.mqtt.subcribe import MqttConnect
+from App.mqtt.subcribetest import MqttConnectTest
 from App.mqtt.SubcribeCommand import MqttConnectCommandResposr
 from django.core.wsgi import get_wsgi_application
 from Users.permissions import createGroup
@@ -21,13 +22,7 @@ try:
     createGroup()
 except:
     pass
-# mqtt.client.loop_start()
-# mqtt.conect("test")
 
-# mqtt.connect("test1")
-#
-# mqtt1 = MqttConnect()
-# mqtt1.stop("test1")
 try:
     mqtt = MqttConnect()
     mqtt.connect("subcribe")
@@ -40,5 +35,9 @@ try:
 except:
     pass
 
-# mqtt = MqttConnect()
-# mqtt.connect("subcribe")
+# try:
+#     mqttt = MqttConnectTest()
+#     mqttt.connect("testtest")
+# except:
+#     pass
+
