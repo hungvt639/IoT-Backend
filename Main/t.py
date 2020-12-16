@@ -50,13 +50,13 @@ while True:
     val = val + 1
     try:
         data = json.dumps(values)
-        client = paho.Client()
+        client = paho.Client("push data")
         a = client.connect(HOST, PORT)
         (rc, mid) = client.publish("subcribe", data, qos=1)
         print(values)
         client.disconnect()
     except:
         pass
-    time.sleep(10)
+    time.sleep(20)
 
 

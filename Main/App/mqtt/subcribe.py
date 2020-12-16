@@ -57,5 +57,5 @@ class MqttConnect():
         client.reconnect_delay_set(1, 120)
         client.on_message = on_message
         # client.on_disconnect = on_disconnect
-        client.connect(HOST, PORT)
+        client.connect(HOST, PORT, keepalive=3600)
         client.loop_start()
