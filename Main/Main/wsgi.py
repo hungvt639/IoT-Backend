@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/3.1/howto/deployment/wsgi/
 import os
 from App.mqtt.subcribe import MqttConnect
 from App.mqtt.subcribetest import MqttConnectTest
-from App.mqtt.SubcribeCommand import MqttConnectCommandResposr
+from App.mqtt.SubcribeCommand import MqttConnectCommandResponse
 from django.core.wsgi import get_wsgi_application
 from Users.permissions import createGroup
 
@@ -23,21 +23,10 @@ try:
 except:
     pass
 
-try:
-    mqtt = MqttConnect()
-    mqtt.connect("subcribe")
-except:
-    pass
+mqtt = MqttConnect()
+mqtt.connect("subcribe")
 
-try:
-    mqttc = MqttConnectCommandResposr()
-    mqttc.connect("command")
-except:
-    pass
 
-# try:
-#     mqttt = MqttConnectTest()
-#     mqttt.connect("testtest")
-# except:
-#     pass
+mqttc = MqttConnectCommandResponse()
+mqttc.connect("command")
 

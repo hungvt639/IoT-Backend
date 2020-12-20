@@ -83,24 +83,24 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Main.wsgi.application'
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'iot-backend',
-        'USER': 'hung',
-        'PASSWORD': 'Hung12345',
-        'HOST': '13.76.188.120',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'iot-backend',
+#         'USER': 'hung',
+#         'PASSWORD': 'Hung12345',
+#         'HOST': '13.76.188.120',
+#         'PORT': '5432',
+#     }
+# }
 
 
 AUTH_PASSWORD_VALIDATORS = [
