@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/3.1/howto/deployment/wsgi/
 
 import os
 from App.mqtt.subcribe import MqttConnect
-from App.mqtt.subcribetest import MqttConnectTest
 from App.mqtt.SubcribeCommand import MqttConnectCommandResponse
 from django.core.wsgi import get_wsgi_application
 from Users.permissions import createGroup

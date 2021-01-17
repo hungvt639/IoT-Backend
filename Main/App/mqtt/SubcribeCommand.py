@@ -1,14 +1,12 @@
 import paho.mqtt.client as mqtt
 from ..serializer.Command import CommandResposeSerializer
 import ast
+from Main.settings import MQTT_HOST, MQTT_PORT
 
-
-HOST = "168.63.233.199"
-PORT = 1883
-
+print(MQTT_HOST, MQTT_PORT)
 
 def on_connect(client, userdata, flags, rc):
-    print("Connect to: {}:{}".format(HOST, PORT))
+    print("Connect to: {}:{}".format(MQTT_HOST, MQTT_PORT))
     client.subscribe(userdata, qos=1)
 
 
@@ -41,5 +39,5 @@ class MqttConnectCommandResponse:
         client.reconnect_delay_set(1, 60)
         client.on_message = on_message
         client.on_disconnect = on_disconnect
-        client.connect(HOST, PORT, keepalive=60)
+        client.connect(MQTT_HOST, MQTT_PORT, keepalive=60)
         client.loop_start()

@@ -135,6 +135,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+MQTT_HOST = "52.148.71.71"
+MQTT_PORT = 1883
 
 STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'Users.MyUsers'

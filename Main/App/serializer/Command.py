@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from ..models.Command import Command, CommandRespose
+from ..models.Chip import Chip
 from ..utils.function import TimestampField
 
 
@@ -15,6 +16,12 @@ class CreateCommandSerializer(serializers.ModelSerializer):
     class Meta:
         model = Command
         fields = ['id', 'user', 'key', 'pin_id', 'command', 'create_at']
+
+    def validate(self, attrs):
+        chip = Chip.objects.filter(user=attrs.get('user'), key=attrs.get('key'))
+        if not chip:
+            raise serializers.ValidationError({'message': ["Bạn không có quyền điều khiển thiết bị này!"]})
+        return attrs
 
 
 class CommandResposeSerializer(serializers.ModelSerializer):
