@@ -19,5 +19,5 @@ class ChipSerializer(serializers.ModelSerializer):
     update_at = TimestampField("create_at")
     class Meta:
         model = Chip
-        fields = ['id','name', 'user', 'key', 'decription', 'create_at', 'update_at', 'chip']
+        fields = ['id','name', 'user', 'key', 'decription', 'create_at', 'update_at', 'chip', 'home']
         read_only_fields = ['id', 'create_at', 'update_at', 'chip']
