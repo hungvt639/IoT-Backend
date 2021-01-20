@@ -1,22 +1,22 @@
 version: '2'
 services:
-  postgres-db:
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_USER: hung
-      POSTGRES_PASSWORD: Hung12345
-      POSTGRES_DB: iot-backend
-    network_mode: "host"
-    ports:
-      - 5432:5432
-    volumes:
-      - /home/iot/iot/postgresql/:/var/lib/postgresql/data
+#  postgres-db:
+#    image: postgres
+#    restart: always
+#    environment:
+#      POSTGRES_USER: hung
+#      POSTGRES_PASSWORD: Hung12345
+#      POSTGRES_DB: iot-backend
+#    network_mode: "host"
+#    ports:
+#      - 5432:5432
+#    volumes:
+#      - /home/iot/iot/postgresql/:/var/lib/postgresql/data
   django-web:
     image: sevolloves/iot:iot-backend
     restart: always
     volumes:
-      - /home/iot/iot/media/:/app/Main/media/
+      - /home/iot/Main/:/app/Main/
     network_mode: "host"
     ports:
       - "8000:8000"
