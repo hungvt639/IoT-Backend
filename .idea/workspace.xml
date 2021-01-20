@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2a6d7e3-1987-421c-8b13-01bd27e633ff" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Main/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +59,7 @@
       <recent name="C:\Users\hung.vt173158\Documents\20201\IoTvaUngDung\back-end\Main\App" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.t">
+  <component name="RunManager" selected="Python.test">
     <configuration name="t" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="back-end" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -102,8 +104,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.t" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.t" />
       </list>
     </recent_temporary>
   </component>
@@ -144,22 +146,22 @@
     </state>
     <state x="771" y="294" key="FileChooserDialogImpl/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1609728096420" />
     <state x="771" y="294" key="FileChooserDialogImpl/62.0.1858.1080@62.0.1858.1080" timestamp="1608693011285" />
-    <state width="1838" height="453" key="GridCell.Tab.0.bottom" timestamp="1609300158023">
+    <state width="1838" height="453" key="GridCell.Tab.0.bottom" timestamp="1610965163576">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1838" height="453" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1609300158023" />
-    <state width="1838" height="453" key="GridCell.Tab.0.center" timestamp="1609300158023">
+    <state width="1838" height="453" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1610965163576" />
+    <state width="1838" height="453" key="GridCell.Tab.0.center" timestamp="1610965163576">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1838" height="453" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1609300158023" />
-    <state width="1838" height="453" key="GridCell.Tab.0.left" timestamp="1609300158023">
+    <state width="1838" height="453" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1610965163576" />
+    <state width="1838" height="453" key="GridCell.Tab.0.left" timestamp="1610965163576">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1838" height="453" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1609300158023" />
-    <state width="1838" height="453" key="GridCell.Tab.0.right" timestamp="1609300158023">
+    <state width="1838" height="453" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1610965163576" />
+    <state width="1838" height="453" key="GridCell.Tab.0.right" timestamp="1610965163576">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1838" height="453" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1609300158023" />
+    <state width="1838" height="453" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1610965163576" />
     <state x="654" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1607485274018">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
