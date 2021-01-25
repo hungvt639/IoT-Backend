@@ -26,7 +26,7 @@ class CreateCommandSerializer(serializers.ModelSerializer):
 
 
 class CommandResposeSerializer(serializers.ModelSerializer):
-    create_at = serializers.DateTimeField(format="%H:%M:%S %d-%m-%Y",input_formats=["%H:%M:%S %d-%m-%Y"])
+    create_at = serializers.DateTimeField(format="%H:%M:%S %d-%m-%Y",input_formats=["%Y-%m-%d %H:%M:%S"])
 
     class Meta:
         model = CommandRespose
