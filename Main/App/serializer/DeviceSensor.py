@@ -20,6 +20,7 @@ class DataSerializer(serializers.ModelSerializer):
 class SensorSerializer(serializers.ModelSerializer):
     data = DataSerializer(many=True)
     create_at = TimestampField("create_at")
+    # create_at = serializers.DateTimeField(format="%H:%M:%S %d-%m-%Y", read_only=True)
     class Meta:
         model = SensorData
         fields = ['create_at', 'data']

@@ -6,11 +6,7 @@ from ..utils.check_permission import check_permission
 import paho.mqtt.client as paho
 import time
 import json
-
-
-HOST = "168.63.233.199"
-PORT = 1883
-
+from Main.settings import MQTT_HOST, MQTT_PORT
 
 class CommandView(generics.ListCreateAPIView):
 
@@ -41,9 +37,9 @@ class CommandView(generics.ListCreateAPIView):
                     data = json.dumps(data)
                     try:
                         client = paho.Client()
-                        client.connect(HOST, PORT)
-                        (rc, mid) = client.publish(request.user.username, data, qos=1)
-                        print("Publish to: {}".format(request.user.username))
+                        client.connect(MQTT_HOST, MQTT_PORT)
+                        (rc, mid) = client.publish("{}/command".format(request.user.username), data, qos=1)
+                        print("Publish to: {}/command".format(request.user.username))
                     except:
                         res = {
                             "message": "Lỗi kết nối",
@@ -60,5 +56,3 @@ class CommandView(generics.ListCreateAPIView):
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         else:
             return Response(data, status=status_code)
-
-

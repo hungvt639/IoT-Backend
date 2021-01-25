@@ -1,9 +1,10 @@
 import paho.mqtt.client as mqtt
 from ..serializer.Command import CommandResposeSerializer
 import ast
+from ..models.Command import Command
 from Main.settings import MQTT_HOST, MQTT_PORT
-
-print(MQTT_HOST, MQTT_PORT)
+from ..serializer.Command import CommandSerializer
+import json
 
 def on_connect(client, userdata, flags, rc):
     print("Connect to: {}:{}".format(MQTT_HOST, MQTT_PORT))
@@ -24,6 +25,17 @@ def on_message(client, userdata, msg):
         serializer = CommandResposeSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
+            command = Command.objects.get(id=serializer.data.copy()['command_id'])
+            command_serialize = CommandSerializer(command)
+            data = command_serialize.data
+            data['respose'] = serializer.data.copy()
+            data = json.dumps(data)
+            client = mqtt.Client()
+            client.connect(MQTT_HOST, MQTT_PORT)
+            (rc, mid) = client.publish("{}/response".format(command.user.username), data, qos=1)
+            print("Publish to: {}/response".format(command.user.username))
+
+            print(command.user.username)
             print("Create",serializer.data.copy())
         else: print(serializer.errors)
     except Exception as e:

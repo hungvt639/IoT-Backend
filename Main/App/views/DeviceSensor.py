@@ -6,7 +6,7 @@ from ..models.Chip import Chip
 from rest_framework.response import Response
 from rest_framework import status, generics
 from ..utils.check_permission import check_permission
-
+from datetime import datetime
 
 class DeviceSensorView(generics.ListCreateAPIView):
 
@@ -59,6 +59,12 @@ class DeviceSensorDetailView(generics.ListCreateAPIView):
                 value = DeviceSensor.objects.filter(chip__user=user).get(id=id)
                 if value.is_sensor:
                     sensor_data = SensorData.objects.filter(sensor=value)
+                    froms = request.GET.get('from', 0)
+                    tos = request.GET.get('to', 0)
+                    if froms and tos:
+                        froms = datetime.strptime(froms, '%H:%M:%S %d-%m-%Y')
+                        tos = datetime.strptime(tos, '%H:%M:%S %d-%m-%Y')
+                        sensor_data = sensor_data.filter(create_at__gt=froms, create_at__lt=tos)
                     serializer_data = SensorSerializer(sensor_data, many=True)
                 else:
                     device_data = DeviceData.objects.filter(device=value).last()
@@ -67,6 +73,7 @@ class DeviceSensorDetailView(generics.ListCreateAPIView):
                 data = serializer.data
                 data['data'] = serializer_data.data
                 return Response(data, status=status_code)
+            except Exception as e: raise e
             except DeviceSensor.DoesNotExist:
                 return Response({"message": ["Không có thiết bị này trong danh sách của bạn!"]},status=status.HTTP_404_NOT_FOUND)
             except:
