@@ -23,7 +23,7 @@ except:
     pass
 
 mqtt = MqttConnect()
-mqtt.connect("subcribe")
+mqtt.connect("subscribe")
 
 
 mqttc = MqttConnectCommandResponse()
