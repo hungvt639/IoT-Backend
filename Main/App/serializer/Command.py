@@ -4,12 +4,20 @@ from ..models.Chip import Chip
 from ..utils.function import TimestampField
 
 
+class CommandResposeSerializer(serializers.ModelSerializer):
+    create_at = serializers.DateTimeField(format="%H:%M:%S %d-%m-%Y",input_formats=["%Y-%m-%d %H:%M:%S"])
+
+    class Meta:
+        model = CommandRespose
+        fields = ['command_id', 'data', 'create_at']
+
+
 class CommandSerializer(serializers.ModelSerializer):
-    # create_at = TimestampField("create_at")
+    response = CommandResposeSerializer(many=True, read_only=True)
     create_at = serializers.DateTimeField(format="%H:%M:%S %d-%m-%Y", input_formats=["%H:%M:%S %d-%m-%Y"])
     class Meta:
         model = Command
-        fields = ['id', 'key', 'pin_id', 'command', 'create_at']
+        fields = ['id', 'key', 'pin_id', 'command', 'create_at', 'response']
 
 
 class CreateCommandSerializer(serializers.ModelSerializer):
@@ -25,10 +33,4 @@ class CreateCommandSerializer(serializers.ModelSerializer):
         return attrs
 
 
-class CommandResposeSerializer(serializers.ModelSerializer):
-    create_at = serializers.DateTimeField(format="%H:%M:%S %d-%m-%Y",input_formats=["%Y-%m-%d %H:%M:%S"])
-
-    class Meta:
-        model = CommandRespose
-        fields = ['command_id', 'data', 'create_at']
 

@@ -14,7 +14,7 @@ class Command(models.Model):
 
 
 class CommandRespose(models.Model):
-    command_id = models.ForeignKey(Command, on_delete=models.CASCADE)
+    command_id = models.ForeignKey(Command, related_name="response", on_delete=models.CASCADE)
     data = models.IntegerField()
     create_at = models.DateTimeField()
 

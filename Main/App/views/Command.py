@@ -16,7 +16,7 @@ class CommandView(generics.ListCreateAPIView):
         if validate:
             user = request.user
             values = Command.objects.filter(user=user)
-            serializer = CommandSerializer(values, many=True)
+            serializer = CommandSerializer(values.order_by("-id"), many=True)
             return Response(serializer.data, status=status_code)
         else:
             return Response(data, status=status_code)
@@ -54,5 +54,22 @@ class CommandView(generics.ListCreateAPIView):
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
             except:
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            return Response(data, status=status_code)
+
+class DetailCommandView(generics.ListCreateAPIView):
+    def get(self, request, *args, **kwargs):
+        perm = "App.view_command"
+        validate, data, status_code = check_permission(request, perm)
+        if validate:
+            try:
+                id = kwargs.get('id')
+                user = request.user
+                values = Command.objects.filter(user=user)
+                values = values.get(id=id)
+                serializer = CommandSerializer(values)
+                return Response(serializer.data, status=status_code)
+            except:
+                return Response({"message": ["Không có command này"]}, status=status.HTTP_404_NOT_FOUND)
         else:
             return Response(data, status=status_code)
