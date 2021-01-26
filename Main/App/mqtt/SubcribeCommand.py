@@ -28,7 +28,7 @@ def on_message(client, userdata, msg):
             command = Command.objects.get(id=serializer.data.copy()['command_id'])
             command_serialize = CommandSerializer(command)
             data = command_serialize.data
-            data['respose'] = serializer.data.copy()
+            data['response'] = serializer.data.copy()
             data = json.dumps(data)
             client = mqtt.Client()
             client.connect(MQTT_HOST, MQTT_PORT)
